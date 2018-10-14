@@ -1,0 +1,29 @@
+@import '../../../style/main';
+
+.mask{
+    position:absolute;
+    left:0;
+    top:0px;
+    height:100vh;
+    background:rgba(0,0,0,0); 
+    width:100%;
+    cursor:pointer;
+    z-index:1;
+}
+.crop{
+    position:absolute;
+    background-color:transparent;
+    border:2px dashed rgb(22, 190, 98);
+}
+.formwindow {
+    position:relative;
+    background:#000;
+    top:10px;
+    left:10px;
+    input {
+        width:130px;
+    }
+   input.number {
+        width:60px;
+    }
+}

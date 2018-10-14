@@ -1,0 +1,32 @@
+$searchHeight: 3em;
+$thumbWidth: 120px;
+$padding: 8px;
+$menubackground: rgb(160, 233, 229);
+$buttoncolor: rgba(40, 60, 90, 1);
+$buttona1: rgba(40, 60, 90, 0.9);
+$buttona2: rgba(40, 60, 90, 0.4);
+$buttona0: rgba(40, 60, 90, 0);
+
+
+
+%button {
+    user-select: none;
+    cursor: pointer;
+    display: inline-block;
+    border: 1.5px solid $buttona1;
+    color: $buttoncolor;
+    padding: 6px 12px 6px 12px;
+    background: $buttona0;
+    &:hover {
+        background: $buttona2;
+    }
+}
+%input {
+    height: 2em;
+    font-size: 12pt;
+    border: 0;
+    box-sizing: border-box;
+    width: 450px;
+    margin-top: 3px;
+    margin-right: 4px;
+}

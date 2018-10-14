@@ -1,0 +1,209 @@
+@import "./main";
+
+.wrapper {
+    overflow: hidden;
+    height: inherit;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    a {
+        color: #222;
+    }
+}
+.fullscreen {
+  position: fixed;
+  width: 100vw;
+  left: 0;
+  top: 0;
+  z-index: 5000;
+  height: 100vh;
+}
+
+.navWrapper {
+    user-select: none;
+    position: relative;
+    z-index: 1000;
+    background: $menubackground;
+    padding-right: 2em;
+    padding: 2px;
+    cursor: pointer;
+    nav > ul {
+        margin: 0;
+        padding: 0 0 0 1em;
+    }
+    nav > ul > li {
+        display: inline-block;
+        padding-right: 2em;
+        &.hidden {
+            display: none;
+        }
+        &.dropmenu::after {
+            border-top: 6px solid black;
+            border-right: 6px solid transparent;
+            border-left: 6px solid transparent;
+            content: "";
+            display: inline-block;
+            height: 0;
+            width: 0;
+            vertical-align: middle;
+            margin-left: 3px;
+        }
+    }
+
+    ul li ul {
+        padding: 0;
+    }
+    nav ul ul {
+        // padding: 0 10px 8px 6px;
+        margin-top: 8px;
+    }
+    nav ul ul li {
+        padding: 8px 16px 8px 16px;
+        cursor: pointer;
+    }
+    nav li {
+        list-style-type: none;
+        padding: 12px 0 8px 8px;
+        background: $menubackground;
+        // margin-right: 1em;
+        &:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+    }
+
+    li > ul {
+        position: absolute;
+        display: none;
+    }
+
+    li:hover > ul {
+        display: block;
+        background: $menubackground;
+    }
+}
+
+.menubar {
+    user-select: none;
+    position: relative;
+    z-index: 1000;
+    background: $menubackground;
+    padding-right: 2em;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 2px;
+    a {
+        @extend %button;
+    }
+    select {
+        padding: 6px;
+        margin-right: 6px;
+        font-size: 12pt;
+        background-color: transparent;
+        color: white;
+        border-radius: 0;
+    }
+    input {
+        @extend %input;
+        font-size: 90%;
+        &.number {
+            width: 40px;
+        }
+    }
+}
+.modes {
+    a {
+        &::before {
+            content: "";
+            border-radius: 50%;
+            width: 12px;
+            height: 12px;
+            margin-right: 3px;
+            display: inline-block;
+            position: relative;
+            background: darken(rgb(197, 159, 35), 30%);
+        }
+        &.selected::before {
+            background: rgb(243, 208, 92);
+        }
+    }
+}
+.container {
+    height: inherit;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+}
+.solid {
+    animation: colorchange 2s infinite; /* animation-name followed by duration in seconds*/
+}
+
+@keyframes colorchange {
+    0% {
+        background: red;
+    }
+    25% {
+        background: yellow;
+    }
+    50% {
+        background: blue;
+    }
+    75% {
+        background: green;
+    }
+    100% {
+        background: red;
+    }
+}
+
+.checks {
+    background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+CjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0iI2ZmZiI+PC9yZWN0Pgo8cmVjdCB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIGZpbGw9IiNjY2MiPjwvcmVjdD4KPHJlY3QgeD0iMTAiIHk9IjEwIiB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIGZpbGw9IiNjY2MiPjwvcmVjdD4KPC9zdmc+");
+}
+
+.fs {
+    background: lightgray;
+    height: 100%;
+    padding-top: 150px;
+    // position: fixed;
+}
+.centered {
+    & > * {
+        float: right;
+        margin-left: 6px;
+    }
+    width: 350px;
+    margin: auto;
+    input.number {
+        height: 2.2em;
+        width: 30px;
+    }
+}
+.button {
+    @extend %button;
+}
+.dropTarget {
+    height: 160px;
+    background: #eee;
+    border: 8px dashed #777;
+    border-radius: 6px;
+    // margin-top: 40vh;
+    font-family: sans-serif;
+    font-size: 16pt;
+    line-height: 150px;
+    color: #888;
+    text-align: center;
+    margin-bottom: 6px;
+}
+.hidden {
+    display: none;
+}
+.leftmenu {
+    & > input {
+        float: left;
+        margin-bottom: 0;
+    }
+}
+.button {
+    @extend %button;
+}
+
+label + input[type="file"] {
+    display: none;
+}

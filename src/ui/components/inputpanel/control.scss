@@ -1,0 +1,13 @@
+@import "../../../style/main";
+
+.panel {
+  &>*{
+    margin-left:6px;
+  }
+  input[type='search'] {
+    @extend %input;
+  }
+  a {
+    @extend %button;
+  }
+}
